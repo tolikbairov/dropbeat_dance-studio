@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Open+Sans:wght@400;500&display=swap');
+
+
+/* Mixin*/
+@mixin barlow {
+  font-family: 'Barlow', sans-serif;
+}
+
+@mixin opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* / Mixin */
+
+/* Variables */
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$padding-vertical: 10rem;
+$padding-vertical-sm: 5rem;
+
+/* / Variables */
+
+
+/* Common */
+html {
+  font-size: 10px;
+}
+
+body {
+  @include barlow;
+}
+
+.wrapper-outer {
+}
+
+.wrapper-inner {
+  max-width: 117rem;
+  margin: 0 auto;
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
+
+  &--wide {
+    max-width: 144rem;
+  }
+}
+
+/* / Common */
+
+//Header
+.header {
+}
+
+//Header
+
+//Hero-image
+.section-hero-image {
+  background-color: #000;
+}
+
+//Hero-image
+
+//Section About
+//Section About
+
+//Block booking
+//Block booking
+
+//Section dance classes
+//Section dance classes
+
+//Section time table
+//Section time table
+
+//Section teachers
+//Section teachers
+
+//Section prices
+//Section prices
+
+//Section testimonials
+//Section testimonials
+
+//Section events
+//Section events
+
+//Section gallery
+//Section gallery
+
+//Section footer
+//Section footer

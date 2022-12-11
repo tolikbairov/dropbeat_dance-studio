@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Open+Sans:wght@400;500&display=swap");
+/* Mixin*/
+/* / Mixin */
+/* Variables */
+/* / Variables */
+/* Common */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+.wrapper-inner {
+  max-width: 117rem;
+  margin: 0 auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+.wrapper-inner--wide {
+  max-width: 144rem;
+}
+
+/* / Common */
+.section-hero-image {
+  background-color: #000;
+}
+
+/*# sourceMappingURL=styles.css.map */
