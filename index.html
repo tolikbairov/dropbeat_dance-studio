@@ -6,35 +6,133 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/styles.css" rel="stylesheet">
     <title>Dropbeat</title>
 </head>
 <body>
 
 <!-- Header -->
-<header class="header wrapper-outer">
-    <div class="wrapper-inner"></div>
+<header class="header">
+    <div class="wrapper-inner">
+        <div class="main-nav">
+            <div class="logo">
+                <a class="logo--link" href="#">
+                    <img alt="dropbeat" src="./img/Logo.png">
+                </a>
+            </div>
+            <nav class="nav-wrapper">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-item--link nav-item--link--active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item--link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item--link" href="#">Dance classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item--link" href="#">Instructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item--link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item--link" href="#">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </header>
 <!-- / Header -->
 
 <!--Hero-image-->
-<section class="section-hero-image wrapper-outer">
-    <div class="wrapper-inner">
+<section class="section-hero-image">
 
+    <div class="hero-image">
+        <div class="wrapper-inner">
+            <div class="hero-text">
+                <span class="hero-text--medium">Every pro was once a</span>
+                <br>
+                <span class="hero-text--big">Beginner.</span>
+                <p class="hero-text--small">Socialize & Make new friends</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="section-booking">
+        <div class="wrapper-inner--wide">
+            <form action="" class="book-class-form">
+
+                <div class="form-field">
+                    <label for="dance-class">
+                        <span class="field-name">Dance class</span>
+                        <select id="dance-class" name="dance-class-select">
+
+                            <option selected value="salsa">The salsa dance</option>
+                            <option value="break-dance">The break dance</option>
+                            <option value="walls">The walls</option>
+                            <option value="ballet">The ballet</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-field">
+                    <label for="name">
+                        <span class="field-name">Your name</span>
+                        <input id="name" placeholder="Your name" type="text"></label>
+                </div>
+                <div class="form-field">
+                    <label for="email">
+                        <span class="field-name">Email address </span>
+                        <input id="email" placeholder="Your e-mail address" type="email"></label>
+                </div>
+
+                <button class="submit-btn main-btn" type="submit">
+                    Book this class
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 <!--Hero-image-->
 
+<!--Block booking-->
+
 <!--Section About-->
 <section class="section-about wrapper-outer">
     <div class="wrapper-inner">
-
+        <h1 class="about-heading">
+            <span class="about-heading--small"></span>
+            Welcome to
+            <span class="about-heading--big">Dropbeat Studio</span>
+        </h1>
+        <div class="about-tabs--container">
+            <div class="tabs-list-container">
+                <div class="tabs-list">
+                    <div class="tab-item">20+ Different
+                        <span class="tab-item--text-sm">Dance classes</span>
+                    </div>
+                    <div class="tab-item">Friendly &
+                        <span class="tab-item--text-sm">Talented instructors</span>
+                    </div>
+                    <div class="tab-item">Win watches
+                        <span class="tab-item--text-sm">Earn medals</span>
+                    </div>
+                    <div class="tab-item">Easy online
+                        <span class="tab-item--text-sm">Booking</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-container">
+                <img alt="about picture" class="about-image" src="./img/dancer.jpg">
+            </div>
+        </div>
     </div>
 </section>
 <!--Section About-->
 
-<!--Block booking-->
-<div class="section-booking"></div>
+
 <section class="wrapper-outer">
     <div class="wrapper-inner">
 

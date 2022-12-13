@@ -10,6 +10,21 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+@mixin flex {
+  display: flex
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* / Mixin */
 
 /* Variables */
@@ -19,11 +34,25 @@ $fw-bold: 700;
 
 $padding-vertical: 10rem;
 $padding-vertical-sm: 5rem;
-
+$main-box-shadow: 0 13px 87px 17px rgba(196, 197, 198, 0.38);
+$main-gradient: linear-gradient(127deg, #4b55be, #d3739d);
 /* / Variables */
 
 
 /* Common */
+
+.main-btn {
+  background: $main-gradient;
+  width: 29rem;
+  height: 8rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: $fw-bold;
+  border: none;
+  cursor: pointer;
+}
+
 html {
   font-size: 10px;
 }
@@ -33,13 +62,15 @@ body {
 }
 
 .wrapper-outer {
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
 }
 
 .wrapper-inner {
+
   max-width: 117rem;
   margin: 0 auto;
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
+
 
   &--wide {
     max-width: 144rem;
@@ -50,22 +81,256 @@ body {
 
 //Header
 .header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 11rem;
+  background-color: transparent;
+
+  & .main-nav {
+    @include flex-align-center ;
+  }
+
+}
+
+.nav-wrapper {
+  margin-left: auto;
+
+}
+
+.nav-list {
+  @include flex;
+
+
+  .nav-item {
+    &:not(:last-child) {
+      margin-right: 8rem;
+    }
+
+    &--link {
+      position: relative;
+
+      &:hover {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+
+          bottom: -.5rem;
+          width: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          height: .2rem;
+          background-color: white;
+
+        }
+      }
+
+      &--active:after {
+        content: '';
+        display: block;
+        position: absolute;
+
+        bottom: -.5rem;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: .2rem;
+        background-color: white;
+      }
+
+      font-size: 1.6rem;
+      color: white;
+      font-weight: $fw-medium;
+    }
+  }
 }
 
 //Header
 
 //Hero-image
 .section-hero-image {
-  background-color: #000;
+  position: relative;
+  //background-color: #000;
+  height: 108rem;
+  color: white;
+
+  .wrapper-inner {
+    height: 100%;
+    @include flex-align-center;
+  }
+}
+
+.hero-image {
+  background: url("../img/hero.jpg") center no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.hero-text {
+  color: inherit;
+
+
+  &--small {
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+    margin-top: 5.3rem;
+    letter-spacing: .4rem;
+  }
+
+  &--medium {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: $fw-medium;
+    letter-spacing: .54rem;
+  }
+
+  &--big {
+    text-transform: uppercase;
+    font-size: 12rem;
+    font-weight: $fw-bold;
+
+    margin: -.5rem;
+  }
 }
 
 //Hero-image
 
-//Section About
-//Section About
 
 //Block booking
+.section-booking {
+  color: black;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateY(50%) translateX(50%);
+
+  box-shadow: $main-box-shadow;
+
+  .wrapper-inner--wide {
+    width: 117rem;
+    padding: 4rem 13rem;
+  }
+
+  .book-class-form {
+    @include flex-align-center;
+
+
+    justify-content: space-between;
+
+    .form-field {
+      margin-right: 50px;
+
+
+      span {
+        display: block;
+        color: #2a2a2a;
+        font-size: 2.4rem;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      select {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      input, option, select {
+        color: #9a9a9a;
+        font-size: 1.6rem;
+      }
+
+      input {
+        border: none;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .submit-btn {
+        background: $main-gradient;
+      }
+
+    }
+  }
+}
+
 //Block booking
+
+//Section About
+
+.section-about {
+  &.wrapper-outer {
+    padding-top: 15rem;
+  }
+
+  .about-heading {
+    color: #2a2a2a;
+
+    &--small {
+      font-size: 2.4rem;
+      font-weight: $fw-medium;
+    }
+
+    &--big {
+      display: block;
+      font-size: 6rem;
+      font-weight: $fw-bold;
+    }
+
+    margin-bottom: 2rem;
+  }
+
+  .about-tabs--container {
+    @include flex;
+
+    .about-image-container {
+      margin-left: auto;
+
+      .about-image {
+        max-width: 72rem;
+        height: auto;
+      }
+    }
+
+    .tabs-list-container {
+      width: 100%;
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+
+      .tabs-list {
+        box-shadow: $main-box-shadow;
+        height: 100%;
+        @include flex;
+        flex-direction: column;
+
+        .tab-item {
+          font-size: 3.6rem;
+          font-weight: $fw-bold;
+          color: #2a2a2a;
+          padding-left: 6rem;
+          height: 100%;
+          @include flex;
+          flex-direction: column;
+          justify-content: center;
+          &:not(:last-child) {
+            border-bottom: #e1e1e1 1px solid;
+          }
+
+          &--text-sm {
+            margin-top: 1.5rem;
+            display: block;
+            font-size: 2.4rem;
+            font-weight: $fw-medium;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Section About
 
 //Section dance classes
 //Section dance classes
